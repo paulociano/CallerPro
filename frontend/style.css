@@ -29,6 +29,7 @@ body {
 }
 
 header { text-align: center; }
+footer { text-align: center; }
 
 #app-logo {
     width: 200px; /* Tamanho do seu novo logo */
