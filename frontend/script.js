@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileNameDisplay = document.getElementById('fileName');
 
     // !!! IMPORTANTE: SUBSTITUA PELA URL DO SEU BACKEND NA RENDER !!!
-    const API_URL = 'https://callerpro.onrender.com/api/app';
+    // A URL deve terminar com "/api/analisar"
+    const API_URL = 'https://callerpro.onrender.com/api/analisar'; // <<< CORRIGIDO AQUI
 
     let activeTab = 'audio'; // Inicia com a aba de áudio
 
@@ -71,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData();
             formData.append('audio', audioFileInput.files[0]);
             requestBody = formData;
-            // O header 'multipart/form-data' é adicionado automaticamente pelo browser com FormData
         } else {
             requestBody = JSON.stringify({ texto: textInput.value });
             requestHeaders['Content-Type'] = 'application/json';
