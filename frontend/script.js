@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileNameDisplay = document.getElementById('fileName');
 
     // !!! IMPORTANTE: SUBSTITUA PELA URL DO SEU BACKEND NA RENDER !!!
-    const API_URL = 'https://coach-ia-backend.onrender.com/api/analisar';
+    const API_URL = 'https://callerpro.onrender.com/api/app';
 
     let activeTab = 'audio'; // Inicia com a aba de áudio
 
