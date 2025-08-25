@@ -1,0 +1,152 @@
+:root {
+    --primary-color: #22d3ee;
+    --primary-hover: #67e8f9;
+    --background-color: #08141b;
+    --card-background: #0f222b;
+    --text-color: #e2e8f0;
+    --subtle-text: #94a3b8;
+    --border-color: #1e293b;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+header { text-align: center; }
+
+#app-logo {
+    width: 200px; /* Tamanho do seu novo logo */
+    height: auto;
+    margin: 0 auto 1.5rem;
+}
+
+header p {
+    font-size: 1.125rem;
+    color: var(--subtle-text);
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.input-container, .result-area {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+/* Estilos das Abas */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 1.5rem;
+}
+.tab-button {
+    background: none;
+    border: none;
+    color: var(--subtle-text);
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+.tab-button:hover {
+    color: var(--text-color);
+}
+.tab-button.active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+/* Conteúdo das Abas */
+.tab-content {
+    display: none;
+}
+.tab-content.active {
+    display: block;
+}
+
+#uploadLabel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 2.5rem;
+    border: 2px dashed var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+#uploadLabel.dragging {
+    background-color: rgba(34, 211, 238, 0.1);
+    border-color: var(--primary-color);
+}
+#uploadLabel svg { width: 32px; height: 32px; color: var(--subtle-text); }
+#uploadLabel span { font-weight: 500; color: var(--text-color); }
+
+#fileName { margin-top: 1rem; font-weight: 500; color: var(--primary-color); min-height: 24px; text-align: center; }
+
+#textInput {
+    width: 100%;
+    min-height: 150px;
+    background-color: #08141b;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    padding: 1rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    resize: vertical;
+    box-sizing: border-box;
+}
+#textInput:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.2);
+}
+
+#analisarBtn {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 0.85rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+    width: 100%;
+    margin-top: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+#analisarBtn:hover:not(:disabled) { background-color: var(--primary-hover); transform: translateY(-2px); }
+#analisarBtn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.result-area { text-align: center; }
+.result-area h2 { text-align: left; margin-top: 0; margin-bottom: 1.5rem; }
+#feedbackContent { text-align: left; line-height: 1.7; }
+#feedbackContent h3 { margin-top: 1.5rem; margin-bottom: 0.75rem; font-size: 1.1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); color: var(--primary-color); }
+#feedbackContent h3:first-child { margin-top: 0; }
+
+.spinner { border: 4px solid rgba(255, 255, 255, 0.1); width: 36px; height: 36px; border-radius: 50%; border-left-color: var(--primary-color); animation: spin 1s ease infinite; margin: 2rem auto 0; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
